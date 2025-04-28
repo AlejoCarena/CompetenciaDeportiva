@@ -1,0 +1,41 @@
+﻿@model CompetenciaDeportiva.Models.Competidor
+
+<h2>Registrar Competidor</h2>
+
+<form asp-action="Crear" method="post">
+    <div>
+        <label>Nombre</label>
+        <input asp-for="Nombre" />
+        <span asp-validation-for="Nombre"></span>
+    </div>
+
+    <div>
+        <label>Disciplina</label>
+        <select asp-for="Disciplina">
+            <option value="">-- Seleccione --</option>
+            <option value="Natación">Natación</option>
+            <option value="Atletismo">Atletismo</option>
+            <option value="Ciclismo">Ciclismo</option>
+            <option value="Otro">Otro</option>
+        </select>
+        <span asp-validation-for="Disciplina"></span>
+    </div>
+
+    <div>
+        <label>Edad</label>
+        <input asp-for="Edad" type="number" min="0" />
+        <span asp-validation-for="Edad"></span>
+    </div>
+
+    <div>
+        <label>Ciudad de Residencia</label>
+        <input asp-for="CiudadResidencia" />
+        <span asp-validation-for="CiudadResidencia"></span>
+    </div>
+
+    <button type="submit">Registrar</button>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -1,0 +1,32 @@
+﻿@model List<CompetenciaDeportiva.Models.Competidor>
+
+<h2>Listado de Competidores</h2>
+
+@if (!Model.Any())
+{
+    <p>No hay participantes registrados.</p>
+}
+else
+{
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Disciplina</th>
+                <th>Edad</th>
+                <th>Ciudad</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Nombre</td>
+                    <td>@item.Disciplina</td>
+                    <td>@item.Edad</td>
+                    <td>@item.CiudadResidencia</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
